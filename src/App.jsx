@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Search from './components/Search';
 import Shimmer from './components/Shimmer';
+import MovieCard from './components/MovieCard';
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 
@@ -72,9 +73,7 @@ const App = () => {
           ) : (
             <ul>
               {movies.map((movie) => (
-                <p className="text-white" key={movie.id}>
-                  {movie.title}
-                </p>
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </ul>
           )}
